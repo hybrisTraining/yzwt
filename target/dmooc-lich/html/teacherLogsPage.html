@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>后台管理系统</title>
+<link rel="stylesheet" href="/dmooc-lich/css/style.default.css" type="text/css" />
+<script type="text/javascript" src="/dmooc-lich/js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="/dmooc-lich/js/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="/dmooc-lich/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/dmooc-lich/js/jquery.flot.min.js"></script>
+<script type="text/javascript" src="/dmooc-lich/js/jquery.flot.pie.js"></script>
+<script type="text/javascript" src="/dmooc-lich/js/jquery.flot.resize.min.js"></script>
+<script type="text/javascript" src="/dmooc-lich/js/plugins/general.js"></script>
+<script type="text/javascript" src="/dmooc-lich/js/plugins/charts.js"></script>
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/plugins/excanvas.min.js"></script><![endif]-->
+<!--[if IE 9]>
+    <link rel="stylesheet" media="screen" href="css/style.ie9.css"/>
+<![endif]-->
+<!--[if IE 8]>
+    <link rel="stylesheet" media="screen" href="css/style.ie8.css"/>
+<![endif]-->
+<!--[if lt IE 9]>
+	<script src="js/plugins/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<div class="bodywrapper">
+    <div class="topheader">
+        <div class="left">
+            <h1 class="logo">控制台</h1>
+            <span class="slogan">后台管理系统</span>
+            
+            <br clear="all" />
+            
+        </div><!--left-->
+        
+        <div class="right">
+        	<!--<div class="notification">
+                <a class="count" href="notifications.html"><span>9</span></a>
+        	</div>
+			-->
+        	<div class="userinfo">
+            	<img src="/dmooc-lich/images/thumbs/avatar.png" alt="" />
+                <span>成辉</span>
+            </div><!--userinfo-->
+            
+            <div class="userinfodrop">
+            	<div class="avatar">
+                	<a href=""><img src="/dmooc-lich/images/thumbs/avatarbig.png" alt="" /></a>
+                </div><!--avatar-->
+                <div class="userdata">
+                	<h4>成辉</h4>
+                    <span class="email">lich@mail.dlut.edu.cn</span>
+                    <ul>
+                    	<li><a href="#">账户设置</a></li>
+                        <li><a href="#">帮助</a></li>
+                        <li><a href="#">退出登录</a></li>
+                    </ul>
+                </div><!--userdata-->
+            </div><!--userinfodrop-->
+        </div><!--right-->
+    </div><!--topheader-->
+    
+    
+    <div class="header">
+    	<ul class="headermenu">
+        	<li><a href="/dmooc-lich/teacher/homepage"><span class="icon icon-flatscreen"></span>日程</a></li>
+        	<!-- 
+            <li><a href="manageblog.html"><span class="icon icon-pencil"></span>Manage Blog</a></li>
+            <li><a href="messages.html"><span class="icon icon-message"></span>Messages</a></li>
+            -->
+            <li><a href="/dmooc-lich/teacher/logsPage"><span class="icon icon-chart"></span>工作记录</a></li>
+        </ul>
+        
+        <div class="headerwidget" >
+        	<div class="earnings">
+            	<div class="one_half" style="text-align: center;">
+                	<h4>今日教学任务</h4>
+                    <h2>4小时</h2>
+                </div><!--one_half-->
+                <div class="one_half last alignright" style="text-align: center;">
+                	<h4>完成度</h4>
+                    <h2>50%</h2>
+                </div><!--one_half last-->
+            </div><!--earnings-->
+        </div><!--headerwidget-->
+        
+    </div><!--header-->
+    
+    <div class="pageheader">
+    	<h1 class="pagetitle">工作记录</h1>
+        
+        <ul class="hornav">
+        	<li class="current"><a href="#charts">图表数据</a></li>
+            <li><a href="#statistics">具体数据</a></li>
+        </ul>
+    </div><!--pageheader-->
+    
+    <div class="contentwrapper">
+    
+    	<div id="charts" class="subcontent">
+    	
+            <div class="one_half">
+                <div class="contenttitle2">
+                    <h3>本周工作时间</h3>
+                </div><!--contenttitle-->
+                <br />
+                <div id="chartplace" style="height:300px;"></div>
+            </div><!--one_half-->
+            
+            <div class="one_half last">            
+                <div class="contenttitle2">
+                    <h3>本周获得评价</h3>
+                </div>
+                <br />
+                <div id="bargraph" style="height:300px;"></div>
+            </div>
+            
+        </div><!--#charts-->
+        
+        <div id="statistics" class="subcontent">
+        	&nbsp;
+        </div><!--#statistics-->
+        
+    </div><!--contentwrapper-->
+    
+    
+</div><!--bodywrapper-->
+
+</body>
+</html>

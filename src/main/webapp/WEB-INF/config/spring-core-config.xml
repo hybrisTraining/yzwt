@@ -1,0 +1,50 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd ">
+      
+    <!-- 激活 @resource 等标签	 --> 
+	<context:annotation-config/>  
+	
+	<!-- 自动扫描下列目录下的java bean -->
+	<context:component-scan base-package="com.dmooc.mongo"/>
+    <context:component-scan base-package="com.dmooc.security"/>
+    <context:component-scan base-package="com.dmooc.model"/>
+    
+    <!-- service start -->
+	<bean id="teacherWorkbenchService" class="com.dmooc.service.teacher.TeacherWorkbenchService"></bean>
+	<bean id="teacherLoginAndRegisterService" class="com.dmooc.service.teacher.TeacherLoginAndRegisterService"></bean>
+	<bean id="verifyCodeService" class="com.dmooc.service.tools.VerifyCodeService"></bean>
+	<bean id="teacherService" class="com.dmooc.service.android.TeacherService"></bean>
+	<bean id="translatorService" class="com.dmooc.service.android.TranslatorService"></bean>
+	<!-- service end -->
+	
+	<!-- validate -->
+	<bean id="loginAndRegisterValidate" class="com.dmooc.validate.LoginAndRegisterValidate"></bean>
+	
+	<!-- constants -->
+	<bean id="pageUrlConstants" class="com.dmooc.constants.PageUrlConstants"></bean>
+	
+	<!-- dao start -->
+	<bean id="scheduleDao" class="com.dmooc.dao.ScheduleDao"></bean>
+	<bean id="teacherDao" class="com.dmooc.dao.TeacherDao"></bean>
+	<bean id="translatorDao" class="com.dmooc.dao.TranslatorDao"></bean>
+	<!-- dao end -->
+	
+	<!-- populater -->
+	<bean id="appointmentPopulate" class="com.dmooc.populate.AppointmentPopulate"></bean>
+	
+	<!-- jackson converter start-->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+	<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>    
+	<!-- jackson converter end -->
+	
+</beans>
